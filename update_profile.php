@@ -73,17 +73,17 @@ if(mysqli_num_rows($select) > 0){
                         <form  action="update.php" method="post" enctype="multipart/form-data">
                             <div class="row">
                             <div class="col-md-6">
-                        <input type="text" name="update_username" value="<?php echo $fetch['username'];?>" class="form-control mb-3" required></div>
-                        <div class="col-md-6"><input type="text" name="update_email" value="<?php echo $fetch['email'];?>" class="form-control mb-3" required></div></div>
+                        <input type="text" name="update_username" value="<?php echo $fetch['username'];?>" class="form-control mb-3" ></div>
+                        <div class="col-md-6"><input type="text" name="update_email" value="<?php echo $fetch['email'];?>" class="form-control mb-3"></div></div>
                         <input type="hidden" name="old_pass" value="<?php echo $fetch['password'];?>" placeholder="Old Password" class="form-control mb-3" >
                         <div class="row">
-                        <div class="col-md-6"><input type="password" name="update_pass"  placeholder="Old Password" class="form-control mb-3" required></div>
-                        <div class="col-md-6"> <input type="password" name="new_pass" placeholder="New Passsword" class="form-control mb-3" required></div></div>
+                        <div class="col-md-6"><input type="password" name="update_pass"  placeholder="Old Password" class="form-control mb-3"></div>
+                        <div class="col-md-6"> <input type="password" name="new_pass" placeholder="New Passsword" class="form-control mb-3" ></div></div>
                         
                         <div class="row">
-                        <div class="col-md-6"><input type="password" name="confirm_pass" placeholder="Confirm New Password" class="form-control mb-3"required></div>
+                        <div class="col-md-6"><input type="password" name="confirm_pass" placeholder="Confirm New Password" class="form-control mb-3"></div>
                         <div class="col-md-6"> 
-                        <input type="file" name="update_image" value="Upload Image"  accept= "image/jpg, image/png, image/jpeg" class="form-control mb-3" required></div></div>
+                        <input type="file" name="update_image" value="Upload Image"  accept= "image/jpg, image/png, image/jpeg" class="form-control mb-3" ></div></div>
              
 
 
