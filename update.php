@@ -31,7 +31,7 @@ if(isset($_POST['update_profile'])){
 
         } else{
             mysqli_query($dsn, "UPDATE users SET password='$confirm_pass' WHERE id='$users_id'") or die('query2 failed');
-            echo "<script>alert('Password Updated successfully');</script>";
+            echo "<script>alert('You have successfully updated your account');</script>";
             echo "<script>window.location = 'update_profile.php';</script>";
         }
     }

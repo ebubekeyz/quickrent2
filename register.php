@@ -11,6 +11,7 @@ require_once("header.php");
                 <div class="col-lg-6 m-auto">
                     <div class="card mt-5">
                         <div class="card-title mt-5 text-center text-dark">
+                        <h3 class="py-3 "><b>Register</b></h3>
                             <h3 class="py-3 "><img src="img/logo.png"></h3>
                              <!--<h3 class="py-3 "><b>Register</b></h3>-->
                         </div>
