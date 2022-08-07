@@ -1,4 +1,7 @@
-<?php require_once("header.php") ?>
+<?php require_once("header.php");
+
+
+?>
 <body>
 <video autoplay muted loop id="vbg">
 <source src="img/walking.mp4" type="video/mp4">

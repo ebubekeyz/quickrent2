@@ -1,5 +1,8 @@
 <?php 
 require_once("header.php");
+require_once('insertmessages.php');
+require_once('messagemail.php');
+
 
 require_once("update.php");
 $users_id = $_SESSION['users_id'];
@@ -19,9 +22,7 @@ if(isset($_GET['logout'])){
 
 
 <body style="background:#ccc;" >
-<video autoplay muted loop id="vbg">
-<source src="img/walking.mp4" type="video/mp4">
-</video>
+
 
 
 
@@ -56,7 +57,7 @@ if(mysqli_num_rows($select) > 0){
                 <div class="col-lg-6 m-auto">
                     <div class="card mt-5 mb-1">
                         <div class="card-title mt-5 text-center text-dark">
-                          <h3 class="">Account Settings</h3>
+                          <h3 class="">Send Message</h3>
 
                            <div >
                            <?php 
@@ -73,30 +74,23 @@ if(mysqli_num_rows($select) > 0){
                         </div>
                         <div class="card-body">
                         <form  action="" method="post" enctype="multipart/form-data">
-                            <div class="row">
-                            <div class="col-md-6">
-                        <input type="text" name="update_username" value="<?php echo $fetch['username'];?>" class="form-control mb-3" ></div>
-                        <div class="col-md-6"><input type="text" name="update_email" value="<?php echo $fetch['email'];?>" class="form-control mb-3"></div></div>
-                        <input type="hidden" name="old_pass" value="<?php echo $fetch['password'];?>" placeholder="Old Password" class="form-control mb-3" >
-                        <div class="row">
-                        <div class="col-md-6"><input type="password" name="update_pass"  placeholder="Old Password" class="form-control mb-3"></div>
-                        <div class="col-md-6"> <input type="password" name="new_pass" placeholder="New Passsword" class="form-control mb-3" ></div></div>
-                        
-                        <div class="row">
-                        <div class="col-md-6"><input type="password" name="confirm_pass" placeholder="Confirm New Password" class="form-control mb-3"></div>
-                        <div class="col-md-6"> 
-                        <input type="file" name="update_image" value="Upload Image"  accept= "image/jpg, image/png, image/jpeg" class="form-control mb-3" ></div></div>
-             
-
-
-                                <div class="text-center mt-3"><button class="btn btn-primary mb-3 w-100" name="update_profile">Update</button></div>
+                            
+                        <input type="text" name="username" value="<?php echo $fetch['username'];?>" class="form-control mb-3"required >
+                        <input type="text" name="email" value="<?php echo $fetch['email'];?>" class="form-control mb-3"required>
+                        <input type="text" name="to" placeholder="Email Address To:" class="form-control mb-3"required>
+                        <input type="text" name="subject" placeholder="Enter Subject" class="form-control mb-3"required>
+                        <textarea name="comment" placeholder="Enter Comment" id="comment" class="form-control mb-3" rows="5"required></textarea>
+                        <input type="file" placeholder="choose file" name="image[]" id="my-file" value="Upload Image" multiple accept=".docx, .pdf, .doc, .png, .jpg, .jpeg, .gif" class="border border-0 form-control mb-3" required>
+                        <!--<button type="button" class="btn btn-primary" onclick="document.getElementById('my-file').click()">Choose file</button>-->
+                        <div class="text-center mt-3"><button class="btn btn-primary mb-3 w-100" name="post">Send Message</button></div>
                                 
-                                <div class="text-center mt-2"><button class="btn btn-danger mb-3 w-100" name="logout"><a class="text-decoration-none text-white" href="logout?logout">Logout</a></button></div>
-                            </form>
+                             
+                      </form>
                             <div class="copyright-footer text-center mt-3"><a class="text-decoration-none text-dark" href="index">@ <?php echo date('Y');?> Copyright <b>Quickrent.com</b></a></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
 </body>

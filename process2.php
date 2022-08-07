@@ -34,12 +34,23 @@ if(isset($_POST['register'])){
         $insert = mysqli_query($dsn,"INSERT INTO users(username, email, password, image) VALUES('$username','$email','$password','$image')");
         if($insert){
             move_uploaded_file($image_tmp_name, $image_folder);
-            echo "<script>alert('Registration Successful');</script>";
-            echo "<script>window.location = 'login.php' </script>"; 
+            echo "<script>swal({
+                title: 'Registration successful!',
+                text: 'Please click the Login button below to get started!',
+                icon: 'success',
+                button: 'Thanks!',
+              });</script>";
+             
+        
         
         } else{
-            echo "<script>alert('Registration Failed. User Already exist');</script>";
-    echo "<script>window.location = 'register.php' </script>"; 
+            echo "<script>swal({
+                title: 'Registration Failed! User Already exist',
+                text: 'Choose a new username or password',
+                icon: 'success',
+                button: 'Thanks!',
+              });</script>";
+             
 }
             
 }

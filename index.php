@@ -1,5 +1,6 @@
 <?php 
 require_once("header.php");
+
 $users_id = $_SESSION['users_id'];
 
 if(!isset($users_id)){
@@ -14,10 +15,11 @@ if(isset($_GET['logout'])){
 }
 ?>
 
-<body style="background:#ccc;" id="vbg">
+<body style="background:#ccc;" >
 <video autoplay muted loop id="vbg">
 <source src="img/walking.mp4" type="video/mp4">
 </video>
+
 
 
 
@@ -59,6 +61,8 @@ if(mysqli_num_rows($select) > 0){
                             <form  action="" method="post">
                                 
                                 <div class="text-center "><button class="btn btn-primary mb-3 w-100" name="updateprofile"><a class="text-decoration-none text-white" href="update_profile">Update profile</a></button></div>
+                                <div class="text-center mt-2"><button class="btn btn-dark mb-3 w-100" name="message"><a class="text-decoration-none text-white" href="message">send message</a></button></div>
+                                <div class="text-center mt-2"><button class="btn btn-primary mb-3 w-100" name="viewmessage"><a class="text-decoration-none text-white" href="viewmessage">outbox</a></button></div>
                                 <div class="text-center mt-2"><button class="btn btn-danger mb-3 w-100" name="logout"><a class="text-decoration-none text-white" href="logout?logout">Logout</a></button></div>
                                 <div class="text-center "><button class="btn btn-dark mb-3 w-100" name="login"><a class="text-decoration-none text-white" href="login">Login</a></button></div>
                             </form>
